@@ -1,47 +1,40 @@
 ---
-title: "Getting Started with Clojure"
+title: "Clojure快速开始"
 layout: article
 ---
 
-This guide covers:
+这篇文档主要覆盖如下内容：
 
- * prerequisites (such as Leiningen) and installing
- * running the REPL
- * creating a project
- * interactive development
+ * 准备工作（如Leiningen）和安装
+ * 运行REPL
+ * 创建一个工程
+ * 交互式开发
 
-This work is licensed under a <a rel="license"
+本文遵从 <a rel="license"
 href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
-Attribution 3.0 Unported License</a> (including images &
-stylesheets). The source is available [on
-Github](https://github.com/clojuredocs/guides).
+Attribution 3.0 Unported License</a> （包括图片和css）。 源代码在
+[Github](https://github.com/clojuredocs/guides)，翻译版在
+[Github](https://github.com/casitnull/guides/tree/gh-pages)。
 
 
-## Overview
+## 概要
 
-Clojure is a wonderfully simple language and you are going to love
-it.
+Clojure是一门简单而优美的编程语言，希望通过阅读本文你会爱上它。
 
-To quickly get started, first make sure you've got Java installed.
+为了能够实践本文所列内容，请首先确保你的java环境已经正确安装。
 
-Then install the [Leiningen](http://leiningen.org/) project management
-tool.
+然后安装 [Leiningen](http://leiningen.org/)，这是一个Clojure的项目管理工具。
 
-> This author (jg) recommends always installing by downloading the
-> script directly (as described in the instructions at leiningen.org),
-> rather than using your OS's package manager. This will ensure that
-> you get the latest lein version 2.
+> 原作者（John Gabriele）建议始终通过leiningen脚本来进行lein的安装
+> （遵循leiningen.org上的文档操作即可），即使你的系统的包管理器提供leiningen，
+> 这么做的好处是，脚本会确保你安装的是最新版的lein 2
 
-Clojure programs are typically developed inside their own project
-directory, and Leiningen manages projects for you. Lein takes care of
-pulling in dependencies (including Clojure itself), running the REPL,
-running your program and its tests, packaging your program for
-distribution, and other administrative tasks. Run `lein help` to
-see the list of all the tasks in can perform.
+通常来讲，Clojure工程是一个单独的目录，该目录的内容由 Leiningen 来管理。Lein会负责
+帮你拉取所需的依赖jar包（包括Clojure本身的jar包），运行REPL，运行你的程序和测试，
+以及程序的分发打包等，以及其他一些管理任务。运行 `lein help` 可以看到Lein所支持的所有
+Task。
 
-> Again, there's no need to "install" Clojure, per se. Lein
-> will take care of fetching it for you.
-
+> 同样，你不必手动“安装”Clojure，Lein会帮你下载正确的包
 
 ## Trying out the REPL
 
