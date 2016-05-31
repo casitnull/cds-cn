@@ -36,16 +36,14 @@ Task。
 
 > 同样，你不必手动“安装”Clojure，Lein会帮你下载正确的包
 
-## Trying out the REPL
+## 尝试REPL
 
-Although lein facilitates managing your projects, you can also run it
-on its own (outside of any particular project directory). Once you
-have the `lein` tool installed, run it from anywhere you like to get a
-repl:
+抛开lein管理下的Clojure工程，你可以在任何位置启动Clojure的REPL，前提是你必须安装
+`lein` 工具。在命令行下，执行如下指令：
 
     $ lein repl
 
-You should be greeted with a "`user=>`" prompt. Try it out:
+你会得到一个 "`user=>`" 的提示符。接下来可以在该REPL里继续尝试更多操作:
 
 ``` clojure
 user=> (+ 1 1)
@@ -62,9 +60,9 @@ user=> (dotimes [i 3]
 ```
 
 
-## Your first project
+## 你的第一个Clojure工程
 
-Create your first Clojure program like so:
+用如下指令创建你的第一个clojure工程 `my-proj` ：
 
 ``` bash
 lein new app my-proj
@@ -73,14 +71,14 @@ cd my-proj
 lein run
 ```
 
-and see the output from that `println` function call in
-my_proj/core.clj!
+在 my_proj/core.clj 里面有对 `println` 的调用，可以通过调用 `lein run`
+观察其输出。
 
 
-## Interactive Development
+## 交互式开发
 
-In your project directory, start up a repl (`lein repl`) and
-run your `-main` function to see its output in the repl:
+在工程目录下，启动一个repl（指令为`lein repl`），然后在repl下执行你的 `-main`
+函数，会得到类似如下的输出：
 
     $ lein repl
     ...
@@ -88,41 +86,38 @@ run your `-main` function to see its output in the repl:
     Hello, World!
     nil
 
-(The prompt is now "my-proj.core=>" instead of "user=>" because lein
-has started the repl in an app project. More about that ("namespaces")
-in the topical guides.)
+（刚刚启动的repl的提示符已经从 "user=>" 变成了 "my-proj.core=>"，这是因为
+你是在一个工程目录下启动的repl。在关于 ("namespaces") 的文档里会有更多介绍）
 
-From elsewhere, open up your my-proj/src/my_proj/core.clj file
-in your editor. Modify the text in that `println` call.
+用编辑器打开 my-proj/src/my_proj/core.clj，修改函数调用`println`中的文本部分
 
-Back in the repl, reload your source file and run `-main` again:
+再回到repl，重加载源文件并再次运行`-main`，并观察输出的变化：
 
     my-proj.core=> (require 'my-proj.core :reload)
     my-proj.core=> (-main)
 
-to see your changes.
 
+## 参考资料
 
-## See Also
+其他有用的快速起步文档：
 
-Other getting started documentation you might find useful:
-
-  * [Clojure Distilled](http://yogthos.github.io/ClojureDistilled.html):
-    introduction to core concepts necessary for working with Clojure
+  * [Clojure Distilled](http://yogthos.github.io/ClojureDistilled.html)：
+    介绍了Clojure的核心概念
   * [A Brief Beginner's Guide to
-    Clojure](http://www.unexpected-vortices.com/clojure/brief-beginners-guide/index.html):
-    contains a bit more overview and background material for learning your way
-    around the landscape.
-  * [Starting Clojure screencast](http://cemerick.com/2012/05/02/starting-clojure/):
-    an extensive getting-started screencast using Eclipse to develop a webapp project.
+    Clojure](http://www.unexpected-vortices.com/clojure/brief-beginners-guide/index.html)：
+    包含更多的全局知识和背景资料，有助于你更好的从全局理解
+  * [Starting Clojure screencast](http://cemerick.com/2012/05/02/starting-clojure/)：
+    用Eclipse来开发webapp工程的大量截图
 
 
-## Next Stop
+## 下一站
 
-Next stop: [the basic Clojure language tutorial](/articles/tutorials/introduction.html).
+[Clojure基本语言教程](/articles/tutorials/introduction.html)
 
 
 
-## Contributors
+## 贡献者
 
-John Gabriele <jmg3000@gmail.com> (original author)
+John Gabriele <jmg3000@gmail.com> （原作者）
+
+含德 <casit@outlook.com> （译者）
