@@ -1,45 +1,40 @@
 ---
-title: "Introduction to Clojure"
+title: "Clojure介绍"
 layout: article
 ---
 
-This guide covers:
+这篇教程包含如下内容：
 
- * Clojure language basics
- * expressions, identifiers (locals, vars)
- * `let` forms
- * scalars
- * functions
- * basic data types
- * introduction to immutable data structures
- * overview of Clojure reference types (vars, atoms, agents, refs)
- * looping and recursion
- * basics of Clojure macros
+ * Clojure语言的基础知识
+ * 表达式和标识符 (locals, vars)
+ * `let` 表达式
+ * 标量（字面量）
+ * 函数
+ * 基础数据类型
+ * 不可变数据结构的介绍
+ * 引用类型概述 (vars, atoms, agents, refs)
+ * 循环和递归
+ * Clojure宏基础
 
-This work is licensed under a <a rel="license"
+本文遵从 <a rel="license"
 href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
-Attribution 3.0 Unported License</a> (including images &
-stylesheets). The source is available [on
-Github](https://github.com/clojuredocs/guides).
+Attribution 3.0 Unported License</a> （包括图片和css）。 源代码在
+[Github](https://github.com/clojuredocs/guides)，翻译版在
+[Github](https://github.com/casitnull/guides/tree/gh-pages)。
 
 
 
-## Overview
+## 概述
 
-This is a brief beginner's introduction to Clojure. If you haven't
-already done so, have a look at the [Getting
-Started](/articles/tutorials/getting_started.html) tutorial. Before
-continuing, make sure you've got Java and
-[Leiningen](http://leiningen.org) installed, and can create a new
-project and run a REPL in it. The author expects you'll want to have a
-REPL running while following this introduction so you can type
-expressions into it as you go.
+本文是面向Clojure初学者的简单介绍，阅读本文前请先阅读
+[Clojure快速开始](/articles/tutorials/getting_started.html)。继续下一步之前，请确保你已经正确安装了
+Java 和 [Leiningen](http://leiningen.org)，并且能够使用它们创建基本的工程和启动REPL。
+笔者希望你能够正常运行起一个REPL，以便跟着本教程在其中录入所给出的代码示例进行试验。
 
-> **Note:** In the code samples below, unless we're specifically
-> discussing the REPL, to reduce clutter we've usually omitted showing
-> the REPL prompt (ex. "`user=>`" or "`my-proj.core=>`").
+> **注意:** 后续的代码示例中，如无特殊说明，REPL提示符将被省略
+> (例如 "`user=>`" 或 "`my-proj.core=>`")
 >
-> Additionally: In Clojure, a semicolon begins a single-line comment,
+> 此外：In Clojure, a semicolon begins a single-line comment,
 > and in this document we use "`; ⇒`" (for trailing comments) and
 > "`;; ⇒`" (for comments on their own line) to indicate what the
 > previous expression evaluates to.
